@@ -11,5 +11,16 @@ client.on('message', message => {
   	}
 });
 
-// THIS  MUST  BE  THIS  WAY
+
+
+client.on('message', message => {
+if(message.content.startsWith('1s')) {
+if(message.author.id !== "262274898422923264") return;
+var args = message.content.split(' ').slice(1).join(' ');
+message.channel.send(args);
+}
+});
+
+
+
 client.login(process.env.BOT_TOKEN);
